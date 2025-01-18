@@ -22,8 +22,8 @@ import { easing } from "maath";
 
 export default function Logo(props) {
   const mesh = useRef();
-  const { nodes, materials } = useGLTF("/static/FMA.glb");
-  const colorMap = useTexture('/static/FMA_BaseColor.jpg')
+  const { nodes, materials } = useGLTF("/FMA/static/FMA.glb");
+  const colorMap = useTexture('/FMA/static/FMA_BaseColor.jpg')
   colorMap.flipY = false;
   colorMap.encoding = THREE.sRGBEncoding;
   const [dummy] = useState(() => new THREE.Object3D());

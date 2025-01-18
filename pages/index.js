@@ -50,7 +50,7 @@ function Effects() {
 
 function EnvironmentHDR() {
   return(
-    <Environment files='/static/hdr.jpg' background blur={.3} backgroundIntensity={0.2}> 
+    <Environment files='/FMA/static/hdr.jpg' background blur={.3} backgroundIntensity={0.2}> 
       <Lightformer intensity={8} position={[10, 5, -15]} scale={[10, 5, 1]} onUpdate={(self) => self.lookAt(0, 0, 0)} /> 
     </Environment>
   );

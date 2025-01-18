@@ -41,7 +41,7 @@ export default function LogoText(props) {
           bevelEnabled
           bevelSize={0.005}
           position={[0, 0, 0]}
-          font={"/static/Poppins_Bold.json"}
+          font={"/FMA/static/Poppins_Bold.json"}
           receiveShadow
           
           bevelSegments={10}
