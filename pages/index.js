@@ -36,12 +36,6 @@ import TextLogo from "@/components/Text"
 function Effects() {
   return (
     <EffectComposer>
-      <SSAO
-        blendFunction={BlendFunction.MULTIPLY} // Use NORMAL to see the effect
-        samples={31}
-        radius={5}
-        intensity={30}
-      />
       <N8AO aoRadius={1} intensity={2} />
       {/* <SSR />  */}
       <Noise opacity={0.02} />

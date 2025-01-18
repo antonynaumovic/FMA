@@ -47,7 +47,7 @@ export default function Logo(props) {
         <Depth colorA="white" colorB="#f722e5" alpha={1} mode="overlay" near={1.5 * gradient} far={1.5} origin={[2, -2, -2]} />
         <Fresnel mode="add" color="white" intensity={0.2} power={1.5} bias={0.05} />
       </LayerMaterial> */}
-      <meshStandardMaterial metalness={0.2} roughness={0.4}  color={"color"} toneMapped={true} map={colorMap}/>
+      <meshStandardMaterial metalness={0.2} roughness={0.4} toneMapped={true} map={colorMap}/>
         </mesh>
       </Center>
       <Preload all />
