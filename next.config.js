@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "",
+    basePath: "/FMA",
     output: "export",  // <=== enables static exports
   };
 
