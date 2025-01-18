@@ -14,7 +14,8 @@ import {
   PerformanceMonitor,
   MeshTransmissionMaterial,
   Edges,
-  useTexture
+  useTexture,
+  Preload
 } from "@react-three/drei";
 import { LayerMaterial, Depth, Fresnel } from 'lamina'
 import { easing } from "maath";
@@ -29,7 +30,7 @@ export default function Logo(props) {
   const gradient  = .92;
   useFrame((state, dt) => {
     dummy.lookAt(state.pointer.x, state.pointer.y, 1);
-    easing.dampQ(mesh.current.quaternion, dummy.quaternion, 0.15, dt);
+    easing.dampQ(mesh.current.quaternion, dummy.quaternion, 0.15, dt, 1);
   });
 
 
@@ -37,7 +38,7 @@ export default function Logo(props) {
     <group {...props} dispose={null}>
     
       <Center>
-        <mesh ref={mesh} geometry={nodes.FMA.geometry} {...props} castShadow>
+        <mesh ref={mesh} geometry={nodes.FMA.geometry} {...props} castShadow receiveShadow>
         {/* <meshStandardMaterial {...props} envMapIntensity={4}/>
           <LayerMaterial toneMapped={true} envMapIntensity={4}>
           
@@ -49,6 +50,7 @@ export default function Logo(props) {
       <meshStandardMaterial metalness={0.2} roughness={0.4}  color={"color"} toneMapped={true} map={colorMap}/>
         </mesh>
       </Center>
+      <Preload all />
     </group>
   );
 }
