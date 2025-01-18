@@ -37,4 +37,5 @@ module.exports = {
       },
     }),
   ],
+  mode: 'jit'
 }

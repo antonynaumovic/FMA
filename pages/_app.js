@@ -1,3 +1,4 @@
+"use client";
 import { AppProps } from "next/app";
 
 import {HeroUIProvider} from "@heroui/react";

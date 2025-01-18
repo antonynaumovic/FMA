@@ -6,8 +6,11 @@
 		"dev": "next dev --turbo",
 		"build": "next build",
 		"start": "next start",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"lint": "eslint . --ext .ts,.tsx -c .eslintrc.json --fix"
 	},
+	"homepage": "https://antonynaumovic.github.io/FMA",
 	"dependencies": {
 		"@heroui/modal": "^2.2.7",
 		"@heroui/react": "^2.6.12",

@@ -1,3 +1,4 @@
+"use client";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import LandingLayout from "../layouts/landing";
