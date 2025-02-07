@@ -1,12 +1,27 @@
 /** @type {import('next').NextConfig} */
+
+import next from 'next';
+
+const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
-    basePath: "/FMA",
-    assetPrefix: '/FMA/',
-    output: "export",  // <=== enables static exports
-  };
+  reactStrictMode: true,
+  images: {
+    unoptimized: true, // Disable default image optimization
+  },
+  assetPrefix: isProd ? '/FMA/' : '',
+  basePath: isProd ? '/FMA' : '',
+  output: 'export'
+};
 
-const withTM = require('next-transpile-modules')(['three'])
-module.exports = withTM()
 
+// const nextConfig = {
+//     basePath: "/FMA",
+//     assetPrefix: '/FMA/',
+//     output: "export",  // <=== enables static exports
+//   };
 
-module.exports = nextConfig
+const withTM = require('next-transpile-modules')(['three']);
+
+module.exports = withTM(nextConfig);
+
+export default nextConfig
