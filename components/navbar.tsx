@@ -68,7 +68,7 @@ export const Navbar = () => {
   );
 
   return (
-    <NextUINavbar maxWidth="full" position="sticky">
+    <NextUINavbar maxWidth="full" shouldHideOnScroll className="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-0 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
@@ -105,7 +105,7 @@ export const Navbar = () => {
                   <NextLink
                     className={clsx(
                       linkStyles({ color: "foreground" }),
-                      "data-[active=true]:text-primary data-[active=true]:font-medium"
+                      "data-[active=true]:text-primary data-[active=true]:font-semibold font-medium"
                     )}
                     color="foreground"
                     href={item.href}
@@ -123,7 +123,7 @@ export const Navbar = () => {
               <NextLink
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:text-primary data-[active=true]:font-medium"
+                  "data-[active=true]:text-primary data-[active=true]:font-semibold font-medium"
                 )}
                 color="foreground"
                 href={item.href}
@@ -165,25 +165,25 @@ export const Navbar = () => {
             </DropdownTrigger>
           </Badge>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
+            <DropdownItem key="profile" className="h-14 gap-2" textValue="Profile">
               <p className="font-semibold">Signed in as</p>
               <p className="font-semibold">Ezequiel@FMA.com</p>
             </DropdownItem>
-            <DropdownItem key="mentorship">
+            <DropdownItem key="mentorship" textValue="Mentorship">
               Mentorship{" "}
               <Chip className="left-2" color="danger" size="sm">
                 5
               </Chip>
             </DropdownItem>
-            <DropdownItem key="courses">
+            <DropdownItem key="courses" textValue="Courses">
               Courses{" "}
               <Chip className="left-2" color="danger" size="sm">
                 2
               </Chip>
             </DropdownItem>
-            <DropdownItem key="settings">Settings</DropdownItem>
-            <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-            <DropdownItem key="logout" color="danger">
+            <DropdownItem key="settings" textValue="Settings">Settings</DropdownItem>
+            <DropdownItem key="help_and_feedback" textValue="Help">Help & Feedback</DropdownItem>
+            <DropdownItem key="logout" color="danger" textValue="Logout">
               <b>Log Out</b>
             </DropdownItem>
           </DropdownMenu>

@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev --turbo",
+		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
 		"predeploy": "npm run build",
@@ -33,6 +33,7 @@
 		"@react-three/postprocessing": "^2.16.6",
 		"@types/three": "^0.172.0",
 		"clsx": "2.1.1",
+		"embla-carousel-react": "^8.5.2",
 		"framer-motion": "^11.13.1",
 		"hamburger-react": "^2.5.2",
 		"intl-messageformat": "^10.5.0",
@@ -41,6 +42,7 @@
 		"next-themes": "^0.4.4",
 		"react": "18.3.1",
 		"react-dom": "18.3.1",
+		"tailwind-gradient-mask-image": "^1.2.0",
 		"three": "^0.172.0"
 	},
 	"devDependencies": {
@@ -62,6 +64,7 @@
 		"next-transpile-modules": "^10.0.1",
 		"postcss": "8.4.49",
 		"prettier": "3.3.3",
+		"r3f-perf": "^7.2.3",
 		"tailwind-variants": "0.1.20",
 		"tailwindcss": "3.4.16",
 		"typescript": "5.6.3"

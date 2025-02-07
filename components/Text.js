@@ -22,13 +22,6 @@ import {
 } from "@react-three/drei";
 
 export default function LogoText(props) {
-  const mesh = useRef();
-
-  const texture = useLoader(
-    RGBELoader,
-    "https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr"
-  );
-
   return (
 
     <group {...props} dispose={null}>
@@ -41,15 +34,15 @@ export default function LogoText(props) {
           bevelEnabled
           bevelSize={0.005}
           position={[0, 0, 0]}
-          font={"/FMA/static/Poppins_Bold.json"}
-          receiveShadow
+          font={"/static/Poppins_Bold.json"}
           
-          bevelSegments={10}
-          curveSegments={128}
+          
+          bevelSegments={4}
+          curveSegments={4}
         >
           {`   FUTURE\nMATERIAL\n  ARTISTS`}
           <MeshTransmissionMaterial
-            samples={32}
+            samples={8}
             thickness={2}
             anisotropy={1}
             clearcoat={0.1}
@@ -65,7 +58,6 @@ export default function LogoText(props) {
           />
         </Text3D>
       </Center>
-      <Preload all />
     </group>
   );
 }

@@ -1,4 +1,4 @@
-import { Link } from "@heroui/link";
+import { Link } from "@heroui/react";
 
 import { Head } from "./head";
 
@@ -9,7 +9,7 @@ export default function LandingLayout({ children }) {
     <div className="relative flex flex-col h-screen">
       <Head />
       <Navbar />
-      <main className="w-full h-screen">
+      <main className="w-full">
         {children}
       </main>
       <footer className="w-full flex items-center justify-center py-3">

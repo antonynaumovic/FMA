@@ -1,87 +1,46 @@
-"use client";
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
 import LandingLayout from "../layouts/landing";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useRef, useState } from "react";
-import {
-  EffectComposer,
-  HueSaturation,
-  BrightnessContrast,
-} from "@react-three/postprocessing";
-import Logo from "@/components/logo";
-import {
-  Center,
-  AccumulativeShadows,
-  RandomizedLight,
-  Environment,
-  Lightformer,
-  Float,
-  ContactShadows,
-  SoftShadows,
-  Text3D,
-  AsciiRenderer,
-  MeshWobbleMaterial,
-  CubeCamera,
-  MeshRefractionMaterial,
-  useTexture,
-  Stage
-} from "@react-three/drei";
-import * as THREE from "three";
-import { LayerMaterial, Color, Depth, } from "lamina";
-import { SSAO, Bloom, SSR, DepthOfField, Noise, Vignette, ChromaticAberration, N8AO, TiltShift2 } from "@react-three/postprocessing";
-import { BlendFunction } from "postprocessing";
-import { Fira_Code as FontMono, Poppins as FontSans } from "next/font/google";
-import TextLogo from "@/components/Text"
-
-function Effects() {
-  return (
-    <EffectComposer>
-      <N8AO aoRadius={1} intensity={2} />
-      {/* <SSR />  */}
-      <Noise opacity={0.02} />
-      <Vignette eskil={false} offset={0.1} darkness={1.1} />
-      <Bloom luminanceThreshold={1} luminanceSmoothing={1} mipmapBlur={true} intensity={0.5}/>
-      <ChromaticAberration offset={[0.00005, 0.00005]}/>
-      <TiltShift2 blur={0.15} />
-    </EffectComposer>
-  );
-}
-
-function EnvironmentHDR() {
-  return(
-    <Environment files='/FMA/static/hdr.jpg' background blur={.3} backgroundIntensity={0.2}> 
-      <Lightformer intensity={8} position={[10, 5, -15]} scale={[10, 5, 1]} onUpdate={(self) => self.lookAt(0, 0, 0)} /> 
-    </Environment>
-  );
-}
+import Segment from "@/components/segment";
+import {Button, ButtonGroup} from "@heroui/react";
+import Background3D from "@/components/background3D";
+import HomeCard from "@/components/homeCard";
+import EmblaCarousel from '@/components/EmblaCarousel'
 
 export default function IndexPage() {
-  const [perfSucks, degrade] = useState(false);
+
+  const OPTIONS = { dragFree: true, loop: true }
+const SLIDE_COUNT = 5
+const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
   return (
     <LandingLayout>
-      <Canvas
-        camera={{ position: [0, 0, 20], fov: 10 }}
-        shadows
-        dpr={[1, perfSucks ? 1.5 : 2]}
-        eventPrefix="client"
-      >
-      <SoftShadows size={50} focus={2} samples={10}/>
-        <Effects />
-        
-        <TextLogo />
-        <Logo />
-        
-        <ambientLight intensity={0.7}/>
-      <spotLight intensity={0.5} angle={0.5} penumbra={1} position={[10, 15, -5]} />
-      <EnvironmentHDR />
-      <directionalLight castShadow intensity={1} shadow-mapSize={1024}></directionalLight>
-
-        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.3, 0]} receiveShadow>
-          <planeGeometry args={[100, 100]} />
-          <shadowMaterial transparent opacity={0.4} />
-        </mesh>
-      </Canvas>
+      <div className="h-[calc(100vh-4rem)] relative">
+        <Background3D />
+        <div id="TitleOverlay" className="h-full absolute w-full inset-0 pointer-events-none flex justify-center text-white">
+          <div id="TitleHolder" className="content-center max-w-7xl m-8 gap-4">
+            <h1 id="Title" aria-label="Title" className="text-5xl uppercase font-bold text-pretty sm:text-8xl">Your gateway to Material Mastery</h1>
+            <p id="Subtitle" role="doc-subtitle" aria-label="Subtitle" className="text-2xl mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <Button color="secondary" size="lg" radius="full" variant="shadow" className="pointer-events-auto mt-6 uppercase font-bold mr-6">
+              Explore
+            </Button>
+            <Button color="secondary" size="lg" radius="full" variant="ghost" className="pointer-events-auto mt-6 uppercase font-bold text-white">
+              Courses
+            </Button>
+          </div>
+        </div>
+      </div>
+      <Segment title="Section 1 Title" uppercase>
+        <div className="flex flex-row flex-wrap gap-8 mx-4 sm:mx-4">
+          <HomeCard title="Content" desc="Take a course or download a template created by vetted experts and fast-track your business and creative growth. Take a course or download a template"/>
+          <HomeCard title="Community" desc="Take a course or download a template created by vetted experts and fast-track your business and creative growth."/>
+          <HomeCard title="Coaching" desc="Take a course or download a template created by vetted experts and fast-track your business and creative growth."/>
+        </div>
+      </Segment>
+      <Segment>
+      <div className=" flex flex-row flex-wrap gap-8 mx-4 sm:mx-4">
+        <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+      </div>
+      </Segment>
     </LandingLayout>
   );
 }

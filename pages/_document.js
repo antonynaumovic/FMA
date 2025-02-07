@@ -1,4 +1,3 @@
-"use client";
 import { Html, Head, Main, NextScript } from "next/document";
 import clsx from "clsx";
 
@@ -10,7 +9,7 @@ export default function Document() {
       <Head />
       <body
         className={clsx(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased overflow-y-auto",
           fontSans.variable,
         )}
       >
