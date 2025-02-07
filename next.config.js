@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     basePath: "/FMA",
+    assetPrefix: '/FMA/',
     output: "export",  // <=== enables static exports
   };
 
