@@ -3,7 +3,7 @@ import {
     HueSaturation,
     BrightnessContrast,
   } from "@react-three/postprocessing";
-  import Logo from "@/components/logo";
+  import Logo from "./logo";
   import {
     Center,
     AccumulativeShadows,
@@ -41,7 +41,7 @@ import {
   } from "@react-three/postprocessing";
   import { BlendFunction } from "postprocessing";
   import { Fira_Code as FontMono, Poppins as FontSans } from "next/font/google";
-import TextLogo from "@/components/text";
+import TextLogo from "./text";
 import { Perf } from 'r3f-perf'
 import { Canvas } from "@react-three/fiber";
 
