@@ -23,11 +23,9 @@ import getConfig from 'next/config';
 
 
 export default function Logo(props) {
-  const { publicRuntimeConfig } = getConfig();
-  const baseUrl = publicRuntimeConfig.baseUrl;
   const mesh = useRef();
-const { nodes } = useGLTF(`${baseUrl}/static/FMA.glb`);
-  const colorMap = useTexture(`${baseUrl}/static/FMA_BaseColor.jpg`)
+const { nodes } = useGLTF(`${process.env.baseUrl}/static/FMA.glb`);
+  const colorMap = useTexture(`${process.env.baseUrl}/static/FMA_BaseColor.jpg`)
   colorMap.flipY = false;
   const [dummy] = useState(() => new THREE.Object3D());
   useFrame((state, dt) => {

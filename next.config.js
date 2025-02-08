@@ -9,10 +9,9 @@ const nextConfig = {
   },
   assetPrefix: process.env.NODE_ENV === 'production' ? '/FMA/' : '',
   basePath: process.env.NODE_ENV === 'production' ? '/FMA' : '',
-  publicRuntimeConfig: {
+  env: {
     baseUrl: process.env.NODE_ENV === 'production' ? '/FMA' : '',
   },
-
   output: 'export'
 };
 

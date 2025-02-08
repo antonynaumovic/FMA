@@ -74,13 +74,12 @@ function Effects() {
 }
 
 function EnvironmentHDR() {
-  const { publicRuntimeConfig } = getConfig();
   return (
     <Environment
       background
       backgroundIntensity={0.2}
       blur={0.3}
-      files={`${publicRuntimeConfig.baseUrl}/static/hdr.jpg`}
+      files={`${process.env.baseUrl}/static/hdr.jpg`}
       resolution={256}
     >
       <Lightformer intensity={8} position={[10, 5, -15]} scale={[10, 5, 1]} />

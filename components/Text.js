@@ -23,8 +23,6 @@ import {
 import getConfig from 'next/config';
 
 export default function LogoText(props) {
-  const { publicRuntimeConfig } = getConfig();
-  const baseUrl = publicRuntimeConfig.baseUrl;
   return (
 
     <group {...props} dispose={null}>
@@ -37,7 +35,7 @@ export default function LogoText(props) {
           bevelEnabled
           bevelSize={0.005}
           position={[0, 0, 0]}
-          font={`${baseUrl}/static/Poppins_Bold.json`}
+          font={`${process.env.baseUrl}/static/Poppins_Bold.json`}
           
           
           bevelSegments={4}
