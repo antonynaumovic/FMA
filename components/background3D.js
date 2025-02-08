@@ -11,6 +11,8 @@ import { Canvas } from "@react-three/fiber";
 
 import Logo from "@/components/logo";
 import TextLogo from "@/components/Text";
+import getConfig from 'next/config';
+
 
 export default function Background3D() {
   return (
@@ -77,7 +79,7 @@ function EnvironmentHDR() {
       background
       backgroundIntensity={0.2}
       blur={0.3}
-      files="/static/hdr.jpg"
+      files={`${publicRuntimeConfig.baseUrl}/static/hdr.jpg`}
       resolution={256}
     >
       <Lightformer intensity={8} position={[10, 5, -15]} scale={[10, 5, 1]} />

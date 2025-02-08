@@ -9,7 +9,9 @@ const nextConfig = {
   },
   assetPrefix: process.env.NODE_ENV === 'production' ? '/FMA/' : '',
   basePath: process.env.NODE_ENV === 'production' ? '/FMA' : '',
-  
+  publicRuntimeConfig: {
+    baseUrl: process.env.NODE_ENV === 'production' ? '/FMA' : '',
+  },
 
   output: 'export'
 };
@@ -17,5 +19,5 @@ const nextConfig = {
 
 const withTM = require('next-transpile-modules')(['three']);
 
-module.exports = nextConfig;
+module.exports = withTM(nextConfig);
 

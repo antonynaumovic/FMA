@@ -19,12 +19,15 @@ import {
 } from "@react-three/drei";
 import { LayerMaterial, Depth, Fresnel } from 'lamina'
 import { easing } from "maath";
+import getConfig from 'next/config';
 
 
 export default function Logo(props) {
+  const { publicRuntimeConfig } = getConfig();
+  const baseUrl = publicRuntimeConfig.baseUrl;
   const mesh = useRef();
-  const { nodes } = useGLTF("/static/FMA.glb");
-  const colorMap = useTexture('/static/FMA_BaseColor.jpg')
+const { nodes } = useGLTF(`${baseUrl}/static/FMA.glb`);
+  const colorMap = useTexture(`${baseUrl}/static/FMA_BaseColor.jpg`)
   colorMap.flipY = false;
   const [dummy] = useState(() => new THREE.Object3D());
   useFrame((state, dt) => {
