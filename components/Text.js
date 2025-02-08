@@ -20,8 +20,11 @@ import {
   Text3D,
   MeshReflectorMaterial,
 } from "@react-three/drei";
+import getConfig from 'next/config';
 
 export default function LogoText(props) {
+  const { publicRuntimeConfig } = getConfig();
+  const baseUrl = publicRuntimeConfig.baseUrl;
   return (
 
     <group {...props} dispose={null}>
@@ -34,7 +37,7 @@ export default function LogoText(props) {
           bevelEnabled
           bevelSize={0.005}
           position={[0, 0, 0]}
-          font={"/static/Poppins_Bold.json"}
+          font={`${baseUrl}/static/Poppins_Bold.json`}
           
           
           bevelSegments={4}

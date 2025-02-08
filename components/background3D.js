@@ -74,6 +74,7 @@ function Effects() {
 }
 
 function EnvironmentHDR() {
+  const { publicRuntimeConfig } = getConfig();
   return (
     <Environment
       background
