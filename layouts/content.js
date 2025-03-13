@@ -2,9 +2,8 @@ import { Link } from "@heroui/link";
 import { Head } from "./head";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/footer";
-import { Providers } from "@/components/Providers";
+import { Providers } from "./providers";
 import { ParallaxBanner } from "react-scroll-parallax";
-import { title } from "@/components/primitives";
 
 export default function ContentLayout({
   text = "Text",
