@@ -53,5 +53,8 @@ export const siteConfig = {
   links: {
     twitter: "https://twitter.com/futurematerialartists",
     discord: "https://discord.gg/cGTNFBeupB",
+    youtube: "https://www.youtube.com/@FutureMaterialArtists",
+    instagram: "https://www.instagram.com/ezequiel_delaney",
+    patreon: "https://www.patreon.com/futurematerialartists"
   },
 };

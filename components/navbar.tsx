@@ -42,6 +42,9 @@ import {
   SearchIcon,
   Logo,
   ChevronDown,
+  InstagramIcon,
+  PatreonIcon,
+  YoutubeIcon,
 } from "@/components/icons";
 import MainDrawer from "@/components/drawer";
 
@@ -98,10 +101,7 @@ export const Navbar = () => {
               }}
             >
               {siteConfig.navItems.map((item) => (
-                <DropdownItem
-                  key={item.href}
-                  description={item.description}
-                >
+                <DropdownItem key={item.href} description={item.description}>
                   <NextLink
                     className={clsx(
                       linkStyles({ color: "foreground" }),
@@ -143,9 +143,15 @@ export const Navbar = () => {
           <Link isExternal href={siteConfig.links.discord} title="Discord">
             <DiscordIcon className="text-default-500" />
           </Link>
-          {/* <Link isExternal href={siteConfig.links.github} title="GitHub">
-            <GithubIcon className="text-default-500" />
-          </Link> */}
+          <Link isExternal href={siteConfig.links.instagram} title="Instagram">
+            <InstagramIcon className="text-default-500"/>
+          </Link>
+          <Link isExternal href={siteConfig.links.patreon} title="Patreon">
+            <PatreonIcon className="text-default-500"/>
+          </Link>
+          <Link isExternal href={siteConfig.links.youtube} title="YouTube">
+            <YoutubeIcon className="text-default-500"/>
+          </Link>
           <ThemeSwitch />
         </NavbarItem>
 
@@ -165,7 +171,11 @@ export const Navbar = () => {
             </DropdownTrigger>
           </Badge>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2" textValue="Profile">
+            <DropdownItem
+              key="profile"
+              className="h-14 gap-2"
+              textValue="Profile"
+            >
               <p className="font-semibold">Signed in as</p>
               <p className="font-semibold">Ezequiel@FMA.com</p>
             </DropdownItem>
@@ -181,8 +191,12 @@ export const Navbar = () => {
                 2
               </Chip>
             </DropdownItem>
-            <DropdownItem key="settings" textValue="Settings">Settings</DropdownItem>
-            <DropdownItem key="help_and_feedback" textValue="Help">Help & Feedback</DropdownItem>
+            <DropdownItem key="settings" textValue="Settings">
+              Settings
+            </DropdownItem>
+            <DropdownItem key="help_and_feedback" textValue="Help">
+              Help & Feedback
+            </DropdownItem>
             <DropdownItem key="logout" color="danger" textValue="Logout">
               <b>Log Out</b>
             </DropdownItem>
